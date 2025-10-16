@@ -1,6 +1,7 @@
 package com.example.linguaplayindia.data
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 
 @Entity(tableName = "grammar_scores")

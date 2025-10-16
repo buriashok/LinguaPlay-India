@@ -1,7 +1,39 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-kapt") // <--- Required for Room
+    alias(libs.plugins.ksp)
+}
+
+android {
+    namespace = "com.example.linguaplayindia"
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = "com.example.linguaplayindia"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
 }
 
 dependencies {
@@ -15,9 +47,10 @@ dependencies {
     // Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    kapt(libs.androidx.room.compiler)
+    implementation(libs.activity)
+    ksp(libs.androidx.room.compiler)
 
-    // JSON
+    // Gson
     implementation(libs.gson)
 
     // Coroutines

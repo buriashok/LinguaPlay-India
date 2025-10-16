@@ -4,20 +4,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.linguaplayindia.model.GrammarQuestions
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import missing.namespace.R
 import java.io.InputStreamReader
 
 class GameActivity : AppCompatActivity() {
 
     private lateinit var questionText: TextView
     private lateinit var answerBtn: Button
-    private var questionList: List<GrammarQuestion> = emptyList()
+    private var questionList: List<GrammarQuestions> = emptyList()
     private var currentIndex = 0
     private var score = 0
 
@@ -48,7 +45,7 @@ class GameActivity : AppCompatActivity() {
     private fun loadQuestions() {
         val inputStream = assets.open("grammar_data.json")
         val reader = InputStreamReader(inputStream)
-        val type = object : TypeToken<List<GrammarQuestion>>() {}.type
+        val type = object : TypeToken<List<GrammarQuestions>>() {}.type
         questionList = Gson().fromJson(reader, type)
         reader.close()
     }
@@ -58,3 +55,4 @@ class GameActivity : AppCompatActivity() {
         questionText.text = q.question
     }
 }
+
