@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     implementation(libs.activity)
+    implementation(libs.androidx.ui)
     ksp(libs.androidx.room.compiler)
 
     // Gson
@@ -70,5 +71,22 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // ML Kit translation dependency
+    implementation("com.google.mlkit:translate:17.0.2")
+
+    // (Optional) For downloading language models automatically
+    implementation("com.google.mlkit:common:18.10.0")
+
+    // Retrofit for HTTP networking
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // Gson converter for JSON parsing
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Optional: Logging (helps debug API calls)
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    implementation("com.google.mlkit:translate:17.0.2")
 }
 

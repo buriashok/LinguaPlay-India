@@ -17,4 +17,29 @@
     <string name="grammar_correct">✅ %1$s क्रियापद आहे!</string>
     <string name="grammar_wrong">❌ %1$s क्रियापद नाही.</string>
 
+        <string name="utilities_title">उपयुक्त साधने</string>
+        <string name="util_translator">भाषांतरक</string>
+        <string name="util_drawing">रेखाटन पॅड</string>
+        <string name="util_tts">मजकूर ते भाषण</string>
+        <string name="util_dictionary">शब्दकोश</string>
+
+        <string name="translator_title">भाषांतरक</string>
+        <string name="translator_hint">भाषांतर करण्यासाठी मजकूर प्रविष्ट करा</string>
+        <string name="translator_button">भाषांतर करा</string>
+        <string name="translator_result_default">भाषांतर येथे दिसेल</string>
+
+        <string name="drawing_title">रेखाटन पॅड</string>
+        <string name="drawing_clear">स्वच्छ करा</string>
+        <string name="drawing_instruction">दिलेला वाक्य तुमच्या भाषेत लिहा:</string>
+
+        <string name="tts_title">मजकूर ते भाषण</string>
+        <string name="tts_hint">बोलण्यासाठी मजकूर प्रविष्ट करा</string>
+        <string name="tts_button">बोला</string>
+
+        <string name="dictionary_title">शब्दकोश</string>
+        <string name="dictionary_hint">शब्द प्रविष्ट करा</string>
+        <string name="dictionary_button">शोधा</string>
+        <string name="dictionary_not_found">शब्द सापडला नाही.</string>
+
+
 </resources>

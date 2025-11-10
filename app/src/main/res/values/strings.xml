@@ -16,4 +16,33 @@
     <string name="grammar_tapper_instruction">Tap the verb in the sentence below:</string>
     <string name="grammar_correct">✅ %1$s is the verb!</string>
     <string name="grammar_wrong">❌ %1$s is not the verb.</string>
+    <!-- Utilities Menu -->
+    <string name="utilities_title">Utilities</string>
+    <string name="util_translator">Language Translator</string>
+    <string name="util_drawing">Drawing Pad</string>
+    <string name="util_tts">Text to Speech</string>
+    <string name="util_dictionary">Dictionary</string>
+
+    <!-- Translator Activity -->
+    <string name="translator_title">Language Translator</string>
+    <string name="translator_hint">Enter text to translate</string>
+    <string name="translator_button">Translate</string>
+    <string name="translator_result_default">Translation will appear here</string>
+
+    <!-- Drawing Pad Activity -->
+    <string name="drawing_title">Drawing Pad</string>
+    <string name="drawing_clear">Clear Pad</string>
+    <string name="drawing_instruction">Write the given sentence in your language:</string>
+
+    <!-- Text-to-Speech Activity -->
+    <string name="tts_title">Text to Speech</string>
+    <string name="tts_hint">Enter text to speak</string>
+    <string name="tts_button">Speak</string>
+
+    <!-- Dictionary Activity -->
+    <string name="dictionary_title">Dictionary</string>
+    <string name="dictionary_hint">Enter a word</string>
+    <string name="dictionary_button">Search</string>
+    <string name="dictionary_not_found">Word not found.</string>
+
 </resources>

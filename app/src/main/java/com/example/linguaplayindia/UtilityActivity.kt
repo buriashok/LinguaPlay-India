@@ -1,20 +1,26 @@
 package com.example.linguaplayindia
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class UtilityActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_utility)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+
+        findViewById<Button>(R.id.btnTranslator).setOnClickListener {
+            startActivity(Intent(this, TranslatorActivity::class.java))
+        }
+        findViewById<Button>(R.id.btnDrawingPad).setOnClickListener {
+            startActivity(Intent(this, DrawingPadActivity::class.java))
+        }
+        findViewById<Button>(R.id.btnTTS).setOnClickListener {
+            startActivity(Intent(this, TTSActivity::class.java))
+        }
+        findViewById<Button>(R.id.btnDictionary).setOnClickListener {
+            startActivity(Intent(this, DictionaryActivity::class.java))
         }
     }
 }

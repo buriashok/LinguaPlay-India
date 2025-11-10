@@ -17,4 +17,29 @@
     <string name="grammar_correct">✅ %1$s வினைச்சொல்!</string>
     <string name="grammar_wrong">❌ %1$s வினைச்சொல் அல்ல.</string>
 
+        <string name="utilities_title">உபயோகங்கள்</string>
+        <string name="util_translator">மொழிபெயர்ப்பாளர்</string>
+        <string name="util_drawing">வரைவுப் பலகை</string>
+        <string name="util_tts">உரை - பேச்சு மாற்றி</string>
+        <string name="util_dictionary">அகராதி</string>
+
+        <string name="translator_title">மொழிபெயர்ப்பாளர்</string>
+        <string name="translator_hint">மொழிபெயர்க்க உரை உள்ளிடவும்</string>
+        <string name="translator_button">மொழிபெயர்</string>
+        <string name="translator_result_default">மொழிபெயர்ப்பு இங்கே தோன்றும்</string>
+
+        <string name="drawing_title">வரைவுப் பலகை</string>
+        <string name="drawing_clear">அழி</string>
+        <string name="drawing_instruction">வழங்கப்பட்ட வாக்கியத்தை உங்கள் மொழியில் எழுதவும்:</string>
+
+        <string name="tts_title">உரை - பேச்சு மாற்றி</string>
+        <string name="tts_hint">பேச உரை உள்ளிடவும்</string>
+        <string name="tts_button">பேசு</string>
+
+        <string name="dictionary_title">அகராதி</string>
+        <string name="dictionary_hint">சொல்லை உள்ளிடவும்</string>
+        <string name="dictionary_button">தேடு</string>
+        <string name="dictionary_not_found">சொல் கிடைக்கவில்லை.</string>
+
+
 </resources>

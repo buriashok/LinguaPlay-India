@@ -17,5 +17,31 @@
     <string name="grammar_correct">✅ %1$s क्रिया है!</string>
     <string name="grammar_wrong">❌ %1$s क्रिया नहीं है।</string>
 
+        <string name="utilities_title">उपयोगिताएँ</string>
+        <string name="util_translator">भाषा अनुवादक</string>
+        <string name="util_drawing">चित्रण पैड</string>
+        <string name="util_tts">पाठ से वाणी</string>
+        <string name="util_dictionary">शब्दकोश</string>
+
+        <string name="translator_title">भाषा अनुवादक</string>
+        <string name="translator_hint">अनुवाद के लिए पाठ दर्ज करें</string>
+        <string name="translator_button">अनुवाद करें</string>
+        <string name="translator_result_default">अनुवाद यहाँ दिखाई देगा</string>
+
+        <string name="drawing_title">चित्रण पैड</string>
+        <string name="drawing_clear">साफ करें</string>
+        <string name="drawing_instruction">दिए गए वाक्य को अपनी भाषा में लिखें:</string>
+
+        <string name="tts_title">पाठ से वाणी</string>
+        <string name="tts_hint">बोलने के लिए पाठ दर्ज करें</string>
+        <string name="tts_button">बोलें</string>
+
+        <string name="dictionary_title">शब्दकोश</string>
+        <string name="dictionary_hint">शब्द दर्ज करें</string>
+        <string name="dictionary_button">खोजें</string>
+        <string name="dictionary_not_found">शब्द नहीं मिला।</string>
+
+
+
 
 </resources>

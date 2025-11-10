@@ -1,0 +1,24 @@
+{
+  "grammar_rules": [
+    "Nouns are naming words (person, place, thing).",
+    "Verbs describe an action, like 'run' or 'eat'.",
+    "Adjectives describe nouns, e.g., 'beautiful girl'.",
+    "Use 'a' before consonant sounds and 'an' before vowel sounds."
+  ],
+  "vocabulary": [
+    {"en": "Apple", "tr": "Apple"},
+    {"en": "Book", "tr": "Book"},
+    {"en": "Teacher", "tr": "Teacher"},
+    {"en": "School", "tr": "School"}
+  ],
+  "practice_sentences": [
+    {"en": "I am reading a book.", "tr": "I am reading a book."},
+    {"en": "The boy plays football.", "tr": "The boy plays football."},
+    {"en": "She is writing a letter.", "tr": "She is writing a letter."}
+  ],
+  "audio_lessons": [
+    "Repeat after me: I am learning English.",
+    "This is an apple.",
+    "He is my friend."
+  ]
+}

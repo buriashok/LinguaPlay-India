@@ -16,4 +16,30 @@
     <string name="grammar_tapper_instruction">క్రింద ఉన్న వాక్యంలో క్రియపై తాకండి:</string>
     <string name="grammar_correct">✅ %1$s క్రియా!</string>
     <string name="grammar_wrong">❌ %1$s క్రియా కాదు.</string>
+
+
+        <string name="utilities_title">ఉపయోగాలు</string>
+        <string name="util_translator">భాషా అనువాదకుడు</string>
+        <string name="util_drawing">డ్రాయింగ్ ప్యాడ్</string>
+        <string name="util_tts">పాఠ్యాన్ని వాణిగా మార్చు</string>
+        <string name="util_dictionary">నిఘంటువు</string>
+
+        <string name="translator_title">భాషా అనువాదకుడు</string>
+        <string name="translator_hint">అనువదించడానికి పాఠ్యాన్ని నమోదు చేయండి</string>
+        <string name="translator_button">అనువదించు</string>
+        <string name="translator_result_default">అనువాదం ఇక్కడ కనిపిస్తుంది</string>
+
+        <string name="drawing_title">డ్రాయింగ్ ప్యాడ్</string>
+        <string name="drawing_clear">తుడిచివేయి</string>
+        <string name="drawing_instruction">ఇచ్చిన వాక్యాన్ని మీ భాషలో వ్రాయండి:</string>
+
+        <string name="tts_title">పాఠ్యాన్ని వాణిగా మార్చు</string>
+        <string name="tts_hint">మాట్లాడడానికి పాఠ్యాన్ని నమోదు చేయండి</string>
+        <string name="tts_button">మాట్లాడు</string>
+
+        <string name="dictionary_title">నిఘంటువు</string>
+        <string name="dictionary_hint">పదాన్ని నమోదు చేయండి</string>
+        <string name="dictionary_button">శోధించు</string>
+        <string name="dictionary_not_found">పదం కనుగొనబడలేదు.</string>
+
 </resources>
