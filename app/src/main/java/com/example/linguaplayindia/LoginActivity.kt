@@ -25,8 +25,8 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter email and password", Toast.LENGTH_SHORT).show()
             } else {
                 // Temporary login check
-                if (email == "admin@gmail.com" && password == "1234") {
-                    val intent = Intent(this, MainActivity::class.java)
+                if (email == "admin" && password == "1234") {
+                    val intent = Intent(this, LanguageSelectActivity::class.java)
                     startActivity(intent)
                     finish() // Prevent returning to login page
                 } else {

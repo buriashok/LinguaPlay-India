@@ -1,0 +1,19 @@
+{
+  "gap_fill": [
+    {"question": "I ___ to school every day.", "options": ["go", "goes", "went", "going"], "answer": "go"},
+    {"question": "She ___ a book.", "options": ["read", "reads", "reading", "readed"], "answer": "reads"},
+    {"question": "They ___ dinner at 8 PM.", "options": ["have", "has", "having", "had"], "answer": "have"}
+  ],
+  "sentence_builder": [
+    {"correct": ["I", "am", "learning", "Kotlin"]},
+    {"correct": ["He", "is", "playing", "football"]}
+  ],
+  "grammar_tapper": [
+    {"sentence": "They play cricket.", "verb": "play"},
+    {"sentence": "She reads a book.", "verb": "reads"}
+  ],
+  "error_spotter": [
+    {"sentence": "He go to school.", "correct": "He goes to school."},
+    {"sentence": "The boys plays football.", "correct": "The boys play football."}
+  ]
+}

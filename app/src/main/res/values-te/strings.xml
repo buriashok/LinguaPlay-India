@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">వ్యాకరణ ఆటలు</string>
+    <string name="games_title">వ్యాకరణ ఆటలు</string>
+    <string name="next">తరువాత</string>
+    <string name="correct">✅ సరైన వాక్యం!</string>
+    <string name="wrong">❌ తప్పు క్రమం!</string>
+    <string name="completed">🎉 మీరు అన్ని ప్రశ్నలను పూర్తి చేశారు!</string>
+    <string name="choose_language">భాషను ఎంచుకోండి</string>
+    <string name="good_morning">శుభోదయం</string>
+    <string name="good_afternoon">శుభ మద్యాహ్నం</string>
+    <string name="good_evening">శుభ సాయంత్రం</string>
+    <string name="arrange_words">పదాలను సరైన క్రమంలో అమర్చండి:</string>
+    <string name="error_spotter_title">తప్పును గుర్తించండి</string>
+    <string name="error_spotter_instruction">క్రింద ఉన్న వాక్యంలో తప్పు పదాన్ని తాకండి:</string>
+    <string name="grammar_tapper_title">వ్యాకరణ టాపర్</string>
+    <string name="grammar_tapper_instruction">క్రింద ఉన్న వాక్యంలో క్రియపై తాకండి:</string>
+    <string name="grammar_correct">✅ %1$s క్రియా!</string>
+    <string name="grammar_wrong">❌ %1$s క్రియా కాదు.</string>
+</resources>

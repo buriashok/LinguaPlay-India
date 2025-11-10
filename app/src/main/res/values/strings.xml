@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">LinguaPlay India</string>
+    <string name="app_name">Grammar Games</string>
+    <string name="games_title">Grammar Games</string>
+    <string name="next">Next</string>
+    <string name="correct">✅ Correct Sentence!</string>
+    <string name="wrong">❌ Wrong Order!</string>
+    <string name="completed"> 🎉 You have completed all questions!</string>
+    <string name="choose_language">Choose Your Language</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="good_afternoon">Good Afternoon</string>
+    <string name="good_evening">Good Evening</string>
+    <string name="arrange_words">Arrange the words:</string>
+    <string name="error_spotter_title">Error Spotter</string>
+    <string name="error_spotter_instruction">Tap the incorrect word in the sentence below:</string>
+    <string name="grammar_tapper_title">Grammar Tapper</string>
+    <string name="grammar_tapper_instruction">Tap the verb in the sentence below:</string>
+    <string name="grammar_correct">✅ %1$s is the verb!</string>
+    <string name="grammar_wrong">❌ %1$s is not the verb.</string>
 </resources>

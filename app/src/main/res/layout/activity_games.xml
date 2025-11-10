@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#121212"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="Grammar Games"
+        android:textColor="@android:color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true"
+        android:columnCount="2">
+
+        <Button
+            android:id="@+id/btnGapFill"
+            android:text="Grammar Gap-Fill"
+            android:textSize="16sp"
+            android:backgroundTint="#FF9800"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/btnSentenceBuilder"
+            android:text="Sentence Builder"
+            android:textSize="16sp"
+            android:backgroundTint="#3F51B5"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/btnGrammarTapper"
+            android:text="Grammar Tapper"
+            android:textSize="16sp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:id="@+id/btnErrorSpotter"
+            android:text="Error Spotter"
+            android:textSize="16sp"
+            android:backgroundTint="#E91E63"
+            android:textColor="@android:color/white"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_columnWeight="1" />
+    </GridLayout>
+</LinearLayout>

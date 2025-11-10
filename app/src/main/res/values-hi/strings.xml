@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">व्याकरण खेल</string>
+    <string name="games_title">व्याकरण खेल</string>
+    <string name="next">आगे</string>
+    <string name="correct">✅ सही वाक्य!</string>
+    <string name="wrong">❌ गलत क्रम!</string>
+    <string name="completed">🎉 आपने सभी प्रश्न पूरे कर लिए!</string>
+    <string name="choose_language">भाषा चुनें</string>
+    <string name="good_morning">सुप्रभात</string>
+    <string name="good_afternoon">नमस्कार</string>
+    <string name="good_evening">शुभ संध्या</string>
+    <string name="arrange_words">शब्दों को सही क्रम में लगाएँ:</string>
+    <string name="error_spotter_title">त्रुटि खोजें</string>
+    <string name="error_spotter_instruction">नीचे दिए गए वाक्य में गलत शब्द पर टैप करें:</string>
+    <string name="grammar_tapper_title">व्याकरण टैपर</string>
+    <string name="grammar_tapper_instruction">नीचे दिए गए वाक्य में क्रिया पर टैप करें:</string>
+    <string name="grammar_correct">✅ %1$s क्रिया है!</string>
+    <string name="grammar_wrong">❌ %1$s क्रिया नहीं है।</string>
+
+
+</resources>
