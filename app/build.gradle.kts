@@ -23,12 +23,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 
     buildFeatures {
@@ -88,5 +88,11 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 
     implementation("com.google.mlkit:translate:17.0.2")
+
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.biometric:biometric:1.1.0")
+
+    implementation("androidx.biometric:biometric:1.2.0-alpha05")
+
 }
 

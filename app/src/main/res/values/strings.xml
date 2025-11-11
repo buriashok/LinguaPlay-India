@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Grammar Games</string>
+    <string name="app_name">LinguaPlay</string>
     <string name="games_title">Grammar Games</string>
     <string name="next">Next</string>
     <string name="correct">✅ Correct Sentence!</string>

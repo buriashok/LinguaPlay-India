@@ -106,4 +106,17 @@
             android:layout_columnWeight="1"
             android:layout_rowWeight="1" />
     </GridLayout>
+
+    <!-- 🔹 Logout Button -->
+    <Button
+        android:id="@+id/btnLogout"
+        android:text="Logout"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E53935"
+        android:textColor="@android:color/white" />
+
 </LinearLayout>

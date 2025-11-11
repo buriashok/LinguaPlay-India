@@ -1,87 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121212">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:gravity="center"
+    <!-- ✅ Top App Bar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1E1E1E"
+        app:title="Learning Center"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:menu="@menu/menu_learning"
+        app:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp" />
 
-        <TextView
-            android:id="@+id/tvGreeting"
-            android:text="Learning Resources"
-            android:textColor="@android:color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <!-- Grammar Rules -->
         <LinearLayout
-            android:id="@+id/cardGrammar"
-            android:background="#1E88E5"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:text="📘 Grammar Rules"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
 
-        <!-- Vocabulary -->
-        <LinearLayout
-            android:id="@+id/cardVocabulary"
-            android:background="#43A047"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
             <TextView
-                android:text="🗣️ Vocabulary Builder"
+                android:id="@+id/tvGreeting"
+                android:text="Learning Resources"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-        </LinearLayout>
 
-        <!-- Practice Sentences -->
-        <LinearLayout
-            android:id="@+id/cardPractice"
-            android:background="#FB8C00"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="✍️ Practice Sentences"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+            <!-- Grammar Rules -->
+            <LinearLayout
+                android:id="@+id/cardGrammar"
+                android:background="#1E88E5"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="📘 Grammar Rules"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
-        <!-- Audio Lessons -->
-        <LinearLayout
-            android:id="@+id/cardAudio"
-            android:background="#8E24AA"
-            android:padding="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:text="🔊 Audio Lessons"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <!-- Vocabulary -->
+            <LinearLayout
+                android:id="@+id/cardVocabulary"
+                android:background="#43A047"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="🗣️ Vocabulary Builder"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Practice -->
+            <LinearLayout
+                android:id="@+id/cardPractice"
+                android:background="#FB8C00"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="✍️ Practice Sentences"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Audio -->
+            <LinearLayout
+                android:id="@+id/cardAudio"
+                android:background="#8E24AA"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="🔊 Audio Lessons"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- Quiz -->
+            <LinearLayout
+                android:id="@+id/cardQuiz"
+                android:background="#0097A7"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="🧩 Interactive Quiz Practice"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

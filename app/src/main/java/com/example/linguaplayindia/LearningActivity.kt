@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.MaterialToolbar
 import org.json.JSONObject
 import java.io.InputStream
 
@@ -14,13 +15,29 @@ class LearningActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_learning)
 
+        // Setup Toolbar
+        val toolbar = findViewById<MaterialToolbar>(R.id.topAppBar)
+        toolbar.setNavigationOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+        toolbar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_home -> {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+
         val prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE)
         val selectedLang = prefs.getString("selected_language", "English") ?: "English"
 
-        // Load the learning JSON file based on selected language
         val content = loadLearningContent(selectedLang.lowercase())
 
-        // Map buttons to sections
+        findViewById<TextView>(R.id.tvGreeting).text =
+            "Learning Resources - $selectedLang Grammar"
+
         findViewById<LinearLayout>(R.id.cardGrammar).setOnClickListener {
             openDetail("Grammar Rules", content["grammar_rules"] ?: emptyList())
         }
@@ -33,30 +50,41 @@ class LearningActivity : AppCompatActivity() {
         findViewById<LinearLayout>(R.id.cardAudio).setOnClickListener {
             openDetail("Audio Lessons", content["audio_lessons"] ?: emptyList())
         }
-
-        findViewById<TextView>(R.id.tvGreeting).text =
-            "Learning Resources - $selectedLang Grammar"
+        findViewById<LinearLayout>(R.id.cardQuiz).setOnClickListener {
+            startActivity(Intent(this, GamesActivity::class.java))
+        }
     }
 
     private fun loadLearningContent(language: String): Map<String, List<String>> {
         val fileName = "learning/$language.json"
-        val inputStream: InputStream = assets.open(fileName)
-        val json = JSONObject(inputStream.bufferedReader().use { it.readText() })
+        return try {
+            val inputStream: InputStream = assets.open(fileName)
+            val json = JSONObject(inputStream.bufferedReader().use { it.readText() })
 
-        return mapOf(
-            "grammar_rules" to json.getJSONArray("grammar_rules").let { arr ->
-                List(arr.length()) { arr.getString(it) }
-            },
-            "vocabulary" to json.getJSONArray("vocabulary").let { arr ->
-                List(arr.length()) { arr.getJSONObject(it).toString() }
-            },
-            "practice_sentences" to json.getJSONArray("practice_sentences").let { arr ->
-                List(arr.length()) { arr.getJSONObject(it).toString() }
-            },
-            "audio_lessons" to json.getJSONArray("audio_lessons").let { arr ->
-                List(arr.length()) { arr.getString(it) }
-            }
-        )
+            mapOf(
+                "grammar_rules" to json.getJSONArray("grammar_rules").let { arr ->
+                    List(arr.length()) { arr.getString(it) }
+                },
+                "vocabulary" to json.getJSONArray("vocabulary").let { arr ->
+                    List(arr.length()) { arr.getJSONObject(it).toString() }
+                },
+                "practice_sentences" to json.getJSONArray("practice_sentences").let { arr ->
+                    List(arr.length()) { arr.getJSONObject(it).toString() }
+                },
+                "audio_lessons" to json.getJSONArray("audio_lessons").let { arr ->
+                    List(arr.length()) { arr.getString(it) }
+                }
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+            // fallback empty content if file missing / parse error
+            mapOf(
+                "grammar_rules" to emptyList(),
+                "vocabulary" to emptyList(),
+                "practice_sentences" to emptyList(),
+                "audio_lessons" to emptyList()
+            )
+        }
     }
 
     private fun openDetail(title: String, items: List<String>) {
