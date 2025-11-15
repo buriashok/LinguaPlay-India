@@ -1,65 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#121212"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/app_bg"
+    android:padding="20dp">
 
+    <!-- Back Button -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_media_previous"
+        android:background="@android:color/transparent"
+        android:tint="@color/text_dark"
+        android:contentDescription="Back" />
+
+    <!-- Title -->
     <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Grammar Games"
-        android:textColor="@android:color/white"
+        android:textColor="@color/text_dark"
         android:textSize="26sp"
         android:textStyle="bold"
-        android:layout_marginBottom="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_marginTop="10dp"/>
 
-    <GridLayout
+    <!-- Vertical List -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:alignmentMode="alignMargins"
-        android:useDefaultMargins="true"
-        android:columnCount="2">
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
 
-        <Button
-            android:id="@+id/btnGapFill"
-            android:text="Grammar Gap-Fill"
-            android:textSize="16sp"
-            android:backgroundTint="#FF9800"
-            android:textColor="@android:color/white"
-            android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:layout_columnWeight="1" />
+        <!-- Card: Gap Fill -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGapFill"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="14dp"
+            android:backgroundTint="@color/primary"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
 
-        <Button
-            android:id="@+id/btnSentenceBuilder"
-            android:text="Sentence Builder"
-            android:textSize="16sp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_edit"
+                    android:tint="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/btnGapFill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grammar Gap-Fill"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card: Sentence Builder -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSentenceBuilder"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="14dp"
             android:backgroundTint="#3F51B5"
-            android:textColor="@android:color/white"
-            android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:layout_columnWeight="1" />
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
 
-        <Button
-            android:id="@+id/btnGrammarTapper"
-            android:text="Grammar Tapper"
-            android:textSize="16sp"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
+                    android:tint="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/btnSentenceBuilder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sentence Builder"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card: Grammar Tapper -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGrammarTapper"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="14dp"
             android:backgroundTint="#4CAF50"
-            android:textColor="@android:color/white"
-            android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:layout_columnWeight="1" />
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
 
-        <Button
-            android:id="@+id/btnErrorSpotter"
-            android:text="Error Spotter"
-            android:textSize="16sp"
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_agenda"
+                    android:tint="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/btnGrammarTapper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grammar Tapper"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card: Error Spotter -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardErrorSpotter"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:backgroundTint="#E91E63"
-            android:textColor="@android:color/white"
-            android:layout_width="0dp"
-            android:layout_height="140dp"
-            android:layout_columnWeight="1" />
-    </GridLayout>
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_menu_help"
+                    android:tint="@android:color/white"/>
+
+                <TextView
+                    android:id="@+id/btnErrorSpotter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Error Spotter"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:layout_marginStart="16dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
 </LinearLayout>
