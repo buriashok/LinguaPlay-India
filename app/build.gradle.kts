@@ -93,6 +93,9 @@ dependencies {
     implementation("androidx.biometric:biometric:1.1.0")
 
     implementation("androidx.biometric:biometric:1.2.0-alpha05")
+    implementation("com.airbnb.android:lottie:6.3.0")
+    implementation("androidx.drawerlayout:drawerlayout:1.2.0")
+    implementation("androidx.cardview:cardview:1.0.0")
 
 }
 

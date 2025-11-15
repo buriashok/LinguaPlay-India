@@ -27,15 +27,17 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // LOAD XML
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Navigate to signup
+        // Go to signup
         binding.btnSignup.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }
 
-        // Manual login
+        // Email/password login
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmail.text?.toString()?.trim() ?: ""
             val passwordChars = binding.etPassword.text?.toString()?.toCharArray() ?: charArrayOf()
@@ -47,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
 
             lifecycleScope.launch {
                 val res = UserManager.validateUser(applicationContext, email, passwordChars)
-                passwordChars.fill('\u0000') // clear memory for safety
+                passwordChars.fill('\u0000')
 
                 res.fold(onSuccess = { user ->
                     getSharedPreferences("UserPrefs", MODE_PRIVATE)
@@ -68,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // Biometric unlock
+        // Biometric
         binding.btnBiometric.setOnClickListener {
             setupBiometric()
         }
@@ -76,94 +78,46 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupBiometric() {
         val bm = BiometricManager.from(this)
-        when (bm.canAuthenticate(
-            BiometricManager.Authenticators.BIOMETRIC_STRONG or
-                    BiometricManager.Authenticators.DEVICE_CREDENTIAL
-        )) {
-            BiometricManager.BIOMETRIC_SUCCESS -> {
-                executor = ContextCompat.getMainExecutor(this)
-                prompt = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
 
-                    override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
-                        super.onAuthenticationSucceeded(result)
-                        val prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE)
-                        val saved = prefs.getString("logged_user", null)
-                        if (saved != null) {
-                            startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
-                            finish()
-                        } else {
-                            Toast.makeText(
-                                this@LoginActivity,
-                                "No local user remembered. Login first.",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    }
-
-                    override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
-                        super.onAuthenticationError(errorCode, errString)
-                        // If user cancels or fails fingerprint, offer PIN fallback
-                        if (errorCode == BiometricPrompt.ERROR_USER_CANCELED ||
-                            errorCode == BiometricPrompt.ERROR_NEGATIVE_BUTTON ||
-                            errorCode == BiometricPrompt.ERROR_LOCKOUT ||
-                            errorCode == BiometricPrompt.ERROR_LOCKOUT_PERMANENT
-                        ) {
-                            showDeviceCredentialPrompt()
-                        } else {
-                            Toast.makeText(this@LoginActivity, errString, Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                })
-
-                val info = BiometricPrompt.PromptInfo.Builder()
-                    .setTitle("Biometric or Device Credential")
-                    .setSubtitle("Unlock using fingerprint or device PIN")
-                    .setAllowedAuthenticators(
-                        BiometricManager.Authenticators.BIOMETRIC_STRONG or
-                                BiometricManager.Authenticators.DEVICE_CREDENTIAL
-                    )
-                    .build()
-
-                prompt.authenticate(info)
-            }
-
-            else -> {
-                // Biometric unavailable → directly use device credential fallback
-                showDeviceCredentialPrompt()
-            }
+        if (bm.canAuthenticate(
+                BiometricManager.Authenticators.BIOMETRIC_STRONG or
+                        BiometricManager.Authenticators.DEVICE_CREDENTIAL
+            ) != BiometricManager.BIOMETRIC_SUCCESS
+        ) {
+            Toast.makeText(this, "Biometric not available", Toast.LENGTH_SHORT).show()
+            return
         }
-    }
 
-    private fun showDeviceCredentialPrompt() {
-        val keyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
-        val intent = keyguardManager.createConfirmDeviceCredentialIntent(
-            "Unlock Learn Indian Languages",
-            "Please confirm your screen lock to continue"
-        )
-        if (intent != null) {
-            startActivityForResult(intent, DEVICE_CREDENTIAL_REQUEST)
-        } else {
-            Toast.makeText(this, "Device lock not set up", Toast.LENGTH_SHORT).show()
-        }
-    }
+        executor = ContextCompat.getMainExecutor(this)
+        prompt = BiometricPrompt(this, executor, object : BiometricPrompt.AuthenticationCallback() {
 
-    @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == DEVICE_CREDENTIAL_REQUEST) {
-            if (resultCode == RESULT_OK) {
-                // Device credential validated successfully
+            override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
+                super.onAuthenticationSucceeded(result)
                 val prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE)
                 val saved = prefs.getString("logged_user", null)
                 if (saved != null) {
-                    startActivity(Intent(this, HomeActivity::class.java))
+                    startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
                     finish()
                 } else {
-                    Toast.makeText(this, "Please login first", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "No saved user. Login manually.", Toast.LENGTH_SHORT).show()
                 }
-            } else {
-                Toast.makeText(this, "Authentication cancelled", Toast.LENGTH_SHORT).show()
             }
-        }
+
+            override fun onAuthenticationError(errorCode: Int, errString: CharSequence) {
+                super.onAuthenticationError(errorCode, errString)
+                Toast.makeText(this@LoginActivity, errString, Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        val info = BiometricPrompt.PromptInfo.Builder()
+            .setTitle("Biometric or Device Credential")
+            .setSubtitle("Unlock using fingerprint or device PIN")
+            .setAllowedAuthenticators(
+                BiometricManager.Authenticators.BIOMETRIC_STRONG or
+                        BiometricManager.Authenticators.DEVICE_CREDENTIAL
+            )
+            .build()
+
+        prompt.authenticate(info)
     }
 }
