@@ -1,24 +1,50 @@
 {
   "grammar_rules": [
-    "Nouns are naming words (person, place, thing).",
-    "Verbs describe an action, like 'run' or 'eat'.",
-    "Adjectives describe nouns, e.g., 'beautiful girl'.",
-    "Use 'a' before consonant sounds and 'an' before vowel sounds."
+    "A noun is the name of a person, place, or thing.",
+    "A verb describes an action or state of being.",
+    "An adjective describes a noun.",
+    "Use 'a' before consonant sounds and 'an' before vowel sounds.",
+    "A sentence begins with a capital letter.",
+    "A sentence ends with a period, question mark, or exclamation mark.",
+    "Plural nouns usually end with 's' or 'es'.",
+    "Use 'is', 'am', and 'are' for present tense forms of 'to be'.",
+    "Use 'he', 'she', and 'it' for singular pronouns.",
+    "Use 'they' for plural pronouns."
   ],
   "vocabulary": [
     {"en": "Apple", "tr": "Apple"},
     {"en": "Book", "tr": "Book"},
     {"en": "Teacher", "tr": "Teacher"},
-    {"en": "School", "tr": "School"}
+    {"en": "School", "tr": "School"},
+    {"en": "House", "tr": "House"},
+    {"en": "Water", "tr": "Water"},
+    {"en": "Pen", "tr": "Pen"},
+    {"en": "Dog", "tr": "Dog"},
+    {"en": "Friend", "tr": "Friend"},
+    {"en": "Market", "tr": "Market"}
   ],
   "practice_sentences": [
     {"en": "I am reading a book.", "tr": "I am reading a book."},
-    {"en": "The boy plays football.", "tr": "The boy plays football."},
-    {"en": "She is writing a letter.", "tr": "She is writing a letter."}
+    {"en": "She is drinking water.", "tr": "She is drinking water."},
+    {"en": "They are playing football.", "tr": "They are playing football."},
+    {"en": "He is my friend.", "tr": "He is my friend."},
+    {"en": "The dog is running.", "tr": "The dog is running."},
+    {"en": "We are going to school.", "tr": "We are going to school."},
+    {"en": "I have a red pen.", "tr": "I have a red pen."},
+    {"en": "The apple is sweet.", "tr": "The apple is sweet."},
+    {"en": "My teacher is kind.", "tr": "My teacher is kind."},
+    {"en": "This is my house.", "tr": "This is my house."}
   ],
   "audio_lessons": [
     "Repeat after me: I am learning English.",
     "This is an apple.",
-    "He is my friend."
+    "He is my friend.",
+    "She is drinking water.",
+    "They are going to school.",
+    "The dog is running.",
+    "I have a book.",
+    "Repeat: This is my house.",
+    "Say: The apple is sweet.",
+    "Practice: We are friends."
   ]
 }
